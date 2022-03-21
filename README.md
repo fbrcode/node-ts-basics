@@ -36,8 +36,13 @@ yarn add -D eslint-plugin-prettier eslint-config-prettier # needed to setup prop
 yarn add -D eslint-import-resolver-typescript tsconfig-paths # to use absolute paths instead of relative
 # edit .eslintrc.js rules to avoid conflict with prettier. [in line comments in the file]
 # edit tsconfig.json rules to avoid conflict with prettier. [in line comments in the file]
+# faster local development (restarts)
 yarn add -D nodemon
 echo "{ \"watch\": [\"src\"], \"ext\": \"ts,js,json\", \"ignore\": [\"node_modules\", \"coverage\", \"dist\"], \"exec\": \"ts-node -r tsconfig-paths/register ./src/index.ts\", \"restartable\": \"rs\", \"env\": { \"NODE_ENV\": \"development\" } }" > nodemon.json
+# handle environment variables
 yarn add dotenv-safe
 yarn add -D @types/dotenv-safe
+# test/jest
+yarn add -D jest ts-jest @types/jest
+npx ts-jest config:init # startup configuration
 ```
