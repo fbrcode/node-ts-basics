@@ -10,7 +10,7 @@ git init
 echo "node_modules\ndist\ncoverage\n.env" > .gitignore
 yarn init # fill basic info
 node -v > .nvmrc # defines the node version being used
-yarn add -D typescript ts-node @types/typescript # basic dev packages
+yarn add -D typescript ts-node @types/typescript @types/node # basic dev packages
 npx tsc --init # generates tsconfig.json with standard values
 yarn add -D eslint # syntax checking for best practices usage (VSCode ESLint extension: dbaeumer.vscode-eslint)
 npx eslint --init # setup eslint: options... 
@@ -36,5 +36,8 @@ yarn add -D eslint-plugin-prettier eslint-config-prettier # needed to setup prop
 yarn add -D eslint-import-resolver-typescript tsconfig-paths # to use absolute paths instead of relative
 # edit .eslintrc.js rules to avoid conflict with prettier. [in line comments in the file]
 # edit tsconfig.json rules to avoid conflict with prettier. [in line comments in the file]
-
+yarn add -D nodemon
+echo "{ \"watch\": [\"src\"], \"ext\": \"ts,js,json\", \"ignore\": [\"node_modules\", \"coverage\", \"dist\"], \"exec\": \"ts-node -r tsconfig-paths/register ./src/index.ts\", \"restartable\": \"rs\", \"env\": { \"NODE_ENV\": \"development\" } }" > nodemon.json
+yarn add dotenv-safe
+yarn add -D @types/dotenv-safe
 ```
