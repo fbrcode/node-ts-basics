@@ -2,6 +2,12 @@
 
 Basic node backend initialization project.
 
+## Setup
+
+Start installing packages and dependencies with `yarn install`.
+
+Copy environment variables settings `.env.example` to `.env` and adjust accordingly.
+
 ## Creation sequence
 
 ```sh
